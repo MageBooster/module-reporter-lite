@@ -118,7 +118,7 @@ The page header shows the state: **Read-only database user · connected** (green
 - One `SELECT` or `WITH ... SELECT` statement. A trailing `;` is fine; a second statement is refused.
 - Not allowed: `INSERT`, `UPDATE`, `DELETE` and other writing or admin statements, `INTO OUTFILE` / `DUMPFILE`, `LOAD_FILE`, `SLEEP`, `BENCHMARK`, lock functions, variables (`@x`, `:=`), version comments (`/*! */`), `FOR UPDATE` / `LOCK IN SHARE MODE`, `information_schema`, `performance_schema`, `mysql` and `sys`.
 - Use named parameters (`:from`), not `?`.
-- Write table names without the table prefix; the prefix is added for you after `FROM` and `JOIN`. In a comma list (`FROM a, b`) only the first table gets the prefix, so use `JOIN`.
+- Write table names without the table prefix; the prefix is added for you to every table: comma lists (`FROM a, b`), every `JOIN`, aliases, backtick names, subqueries and `WITH` blocks. `WITH` (CTE) names are not tables and are left alone.
 - Each run stops after the time limit (default 10 seconds) and reads at most the row cap (default 5,000 rows). The count shows "more than 5000" when the cap is reached.
 - Magento stores dates in UTC. Date parameters are converted for you; to show a date in store time use `CONVERT_TZ(created_at, '+00:00', '+01:00')` with your offset.
 

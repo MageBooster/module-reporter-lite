@@ -13,5 +13,6 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and 
 - Schedules: daily, weekly, monthly or cron, in store time; date range for the scheduled run; recipients; attachment or 7-day download link; skip when empty; test send.
 - Run history with files, download links with random tokens, cleanup cron.
 - Read-only database user from `env.php` (`mbreporterlite/sql`, falling back to `mbreports/sql`), SELECT-only validator, time limit and row cap.
+- Table prefix support for every table a query reads: comma lists, joins, aliases, backtick names, subqueries and WITH (CTE) bodies; CTE names are skipped.
 - Console command `bin/magento mbreporterlite:run`.
 - Licence check through MageBooster License (30-day grace period).

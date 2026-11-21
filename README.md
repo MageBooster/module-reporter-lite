@@ -40,7 +40,7 @@ Paid packages are served from the MageBooster Composer repository (`https://repo
 
 ## Table prefixes
 
-Write table names without the prefix. When the store uses a table prefix, Reporter Lite adds it to table names after `FROM` and `JOIN`. Limitation: in an old-style comma list (`FROM a, b`) only the first table gets the prefix; use `JOIN` instead.
+Write table names without the prefix. When the store uses a table prefix, Reporter Lite adds it to every table the query reads: comma lists (`FROM a, b`), every `JOIN`, aliases with or without `AS`, backtick names, subqueries and the bodies of `WITH` blocks. CTE names, names with a database (`db.table`) and names that already have the prefix are left alone.
 
 ## Hyvä
 

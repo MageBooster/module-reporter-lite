@@ -118,7 +118,7 @@ Sayfa başlığı durumu gösterir: **Read-only database user · connected** (ye
 - Tek bir `SELECT` ya da `WITH ... SELECT` ifadesi. Sondaki `;` sorun değildir; ikinci bir ifade reddedilir.
 - İzin verilmeyenler: `INSERT`, `UPDATE`, `DELETE` ve veri yazan ya da yönetimsel diğer ifadeler, `INTO OUTFILE` / `DUMPFILE`, `LOAD_FILE`, `SLEEP`, `BENCHMARK`, kilit fonksiyonları, değişkenler (`@x`, `:=`), sürüm yorumları (`/*! */`), `FOR UPDATE` / `LOCK IN SHARE MODE`, `information_schema`, `performance_schema`, `mysql` ve `sys`.
 - `?` yerine adlı parametre (`:from`) kullanın.
-- Tablo adlarını önek olmadan yazın; önek `FROM` ve `JOIN` sonrasındaki tablolara kendiliğinden eklenir. Virgüllü listede (`FROM a, b`) yalnızca ilk tablo önek alır; bu yüzden `JOIN` kullanın.
+- Tablo adlarını önek olmadan yazın; önek sorgunun okuduğu her tabloya kendiliğinden eklenir: virgüllü listeler (`FROM a, b`), her `JOIN`, takma adlar, ters tırnaklı adlar, alt sorgular ve `WITH` blokları. `WITH` (CTE) adları tablo değildir, onlara dokunulmaz.
 - Her çalışma süre sınırında (varsayılan 10 saniye) durur ve en fazla satır sınırı kadar (varsayılan 5.000) satır okur. Sınıra ulaşıldığında sayı "more than 5000" olarak görünür.
 - Magento tarihleri UTC olarak saklar. Tarih parametreleri sizin için çevrilir; bir tarihi mağaza saatiyle göstermek için kendi farkınızla `CONVERT_TZ(created_at, '+00:00', '+03:00')` kullanın.
 
