@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+  Copyright (c) 2026 WebWorks 101 OÜ (MageBooster). All rights reserved.
+  Commercial licence, see LICENSE.txt. https://magebooster.com
+  Licensed per serial number for one production installation (one store domain); staging and
+  development copies of that store are allowed. Serial numbers and downloads are tied to the customer.
+  You may modify this code for your own licensed store; keep this notice.
+  Not allowed: copying to other stores, redistributing, reselling, sublicensing, publishing it publicly,
+  removing licence checks or notices, sharing serial numbers. Unauthorised use: the serial number is
+  revoked without refund, updates and support stop, damages and legal action may follow.
+  Estonian law applies; court: Harju County Court (Harju Maakohus).
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="magebooster_license">
+            <group id="serials">
+                <field id="reporter_lite" translate="label comment" type="text" sortOrder="36" showInDefault="1">
+                    <label>MageBooster Reporter Lite</label>
+                    <comment>Serial number, starts with MB1.</comment>
+                </field>
+            </group>
+        </section>
+        <section id="magebooster_reporterlite" translate="label" sortOrder="37" showInDefault="1">
+            <label>Reporter Lite</label>
+            <tab>magebooster</tab>
+            <resource>MageBooster_ReporterLite::config</resource>
+            <group id="mail" translate="label" sortOrder="10" showInDefault="1">
+                <label>E-mail</label>
+                <field id="sender" translate="label comment" type="select" sortOrder="10" showInDefault="1">
+                    <label>Send from</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <comment>Reports go out through the store e-mail settings (Stores, Configuration, Advanced, System, Mail sending settings).</comment>
+                </field>
+                <field id="max_attach_mb" translate="label comment" type="text" sortOrder="20" showInDefault="1">
+                    <label>Largest attachment (MB)</label>
+                    <comment>A bigger file is sent as a download link instead.</comment>
+                    <validate>validate-digits validate-digits-range digits-range-1-25</validate>
+                </field>
+            </group>
+            <group id="sql" translate="label comment" sortOrder="20" showInDefault="1">
+                <label>Queries</label>
+                <comment>Queries run on a read-only database user. The user and its password live in app/etc/env.php (mbreporterlite/sql, or mbreports/sql of MageBooster Reports), never here. See the guide for the setup.</comment>
+                <field id="max_rows" translate="label" type="text" sortOrder="10" showInDefault="1">
+                    <label>Most rows per run</label>
+                    <validate>validate-digits validate-digits-range digits-range-10-100000</validate>
+                </field>
+                <field id="max_seconds" translate="label" type="text" sortOrder="20" showInDefault="1">
+                    <label>Longest run (seconds)</label>
+                    <validate>validate-digits validate-digits-range digits-range-1-120</validate>
+                </field>
+            </group>
+            <group id="files" translate="label" sortOrder="30" showInDefault="1">
+                <label>Files and history</label>
+                <field id="link_days" translate="label comment" type="text" sortOrder="10" showInDefault="1">
+                    <label>Download links work for (days)</label>
+                    <comment>Report files are kept in var/mbreporterlite for this long, then removed.</comment>
+                    <validate>validate-digits validate-digits-range digits-range-1-30</validate>
+                </field>
+                <field id="history_days" translate="label" type="text" sortOrder="20" showInDefault="1">
+                    <label>Keep run history for (days)</label>
+                    <validate>validate-digits validate-digits-range digits-range-7-730</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

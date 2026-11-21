@@ -1,0 +1,283 @@
+Read-only database user · connected,Read-only database user · connected
+The report user can change data. Give it SELECT only.,The report user can change data. Give it SELECT only.
+The read-only database user cannot connect,The read-only database user cannot connect
+No read-only database user set up yet,No read-only database user set up yet
+Last run,Last run
+Next run,Next run
+Recipients,Recipients
+Last result,Last result
+Never,Never
+Not scheduled,Not scheduled
+Nobody yet,Nobody yet
+%1 rows,%1 rows
+1 row,1 row
+1 person,1 person
+%1 people,%1 people
+Query,Query
+Schedule,Schedule
+History,History
+Save,Save
+Saving…,Saving…
+Saved,Saved
+Duplicate,Duplicate
+Delete,Delete
+Run,Run
+Running…,Running…
+Format,Format
+Parameters,Parameters
+"No parameters. Write :from, :to or :name in the query to add one.","No parameters. Write :from, :to or :name in the query to add one."
+Result,Result
+%1 rows · %2 s,%1 rows · %2 s
+Showing the first %1 of %2 rows,Showing the first %1 of %2 rows
+more than %1,more than %1
+Run the query to see the result.,Run the query to see the result.
+The query returned no rows.,The query returned no rows.
+Show chart,Show chart
+Hide chart,Hide chart
+Not saved yet,Not saved yet
+Unsaved changes,Unsaved changes
+You have unsaved changes. Leave them?,You have unsaved changes. Leave them?
+"Delete this report, its history and its files?","Delete this report, its history and its files?"
+New report,New report
+Report name,Report name
+Untitled report,Untitled report
+Copy of %1,Copy of %1
+Send automatically,Send automatically
+On,On
+How often,How often
+Daily,Daily
+Weekly,Weekly
+Monthly,Monthly
+Custom,Custom
+every day,every day
+one day a week,one day a week
+one date a month,one date a month
+cron expression,cron expression
+Day,Day
+Day of the month,Day of the month
+Time,Time
+Data covers,Data covers
+Next send:,Next send:
+covering %1,covering %1
+Use a cron expression,Use a cron expression
+Use the simple schedule,Use the simple schedule
+Cron expression,Cron expression
+Add an e-mail…,Add an e-mail…
+Remove %1,Remove %1
+File,File
+Delivery,Delivery
+Attach to the e-mail,Attach to the e-mail
+Download link (%1 days),Download link (%1 days)
+Don't send when there are no rows,Don't send when there are no rows
+Send a test to me,Send a test to me
+Sending…,Sending…
+Save the report first.,Save the report first.
+Save your changes first.,Save your changes first.
+Run history,Run history
+No runs yet.,No runs yet.
+schedule,schedule
+test,test
+Download,Download
+not kept,not kept
+Downloading…,Downloading…
+Monday,Monday
+Tuesday,Tuesday
+Wednesday,Wednesday
+Thursday,Thursday
+Friday,Friday
+Saturday,Saturday
+Sunday,Sunday
+Pick a date,Pick a date
+Store view,Store view
+Search reports,Search reports
+My reports,My reports
+No reports yet. Start with New report or pick one from the library.,No reports yet. Start with New report or pick one from the library.
+No report matches.,No report matches.
+Start from the library,Start from the library
+Scheduled,Scheduled
+Paused,Paused
+Manual,Manual
+"Write your own query in the editor below, or start from an example and change it","Write your own query in the editor below, or start from an example and change it"
+About this example,About this example
+Columns you get,Columns you get
+Change it like this,Change it like this
+How to write a report query,How to write a report query
+Where the data is,Where the data is
+Common mistakes,Common mistakes
+SELECT only,SELECT only
+SQL query,SQL query
+Something went wrong. Try again.,Something went wrong. Try again.
+Your admin role can run saved reports but not change them.,Your admin role can run saved reports but not change them.
+Store time (%1),Store time (%1)
+Times are in store time (%1).,Times are in store time (%1).
+Add at least one recipient to send automatically.,Add at least one recipient to send automatically.
+"""%1"" is not a valid e-mail address.","""%1"" is not a valid e-mail address."
+Test sent to %1,Test sent to %1
+Close,Close
+The schedule is off. Turn it on to send automatically.,The schedule is off. Turn it on to send automatically.
+Only the scheduled run uses this. Run and downloads use the parameter values above.,Only the scheduled run uses this. Run and downloads use the parameter values above.
+Bar chart of %1 by %2,Bar chart of %1 by %2
+Value,Value
+Your admin role does not allow this.,Your admin role does not allow this.
+Something went wrong. The error was logged.,Something went wrong. The error was logged.
+Report,Report
+This file is no longer kept.,This file is no longer kept.
+Generated %1 UTC,Generated %1 UTC
+SQL reports,SQL reports
+Give the report a name.,Give the report a name.
+Up to 50 recipients.,Up to 50 recipients.
+Your admin account has no e-mail address.,Your admin account has no e-mail address.
+This link has expired or is not valid.,This link has expired or is not valid.
+"Skipped, no rows","Skipped, no rows"
+There is no valid recipient.,There is no valid recipient.
+Test,Test
+Sent to %1 people,Sent to %1 people
+Sent to 1 person,Sent to 1 person
+No rows this time.,No rows this time.
+%1 rows%2.,%1 rows%2.
+limit reached,limit reached
+Download the file (the link works for %1 days):,Download the file (the link works for %1 days):
+The file is attached.,The file is attached.
+First 10 rows shown.,First 10 rows shown.
+This is a test send. The scheduled e-mail goes to the report recipients.,This is a test send. The scheduled e-mail goes to the report recipients.
+Covering %1,Covering %1
+Sent by MageBooster Reporter Lite.,Sent by MageBooster Reporter Lite.
+Blank — write my own,Blank — write my own
+"An empty editor. Type any SELECT query; the table list and the steps on the right help you find the right columns. Parameters you write (:from, :to, :anything) get their own fields automatically.","An empty editor. Type any SELECT query; the table list and the steps on the right help you find the right columns. Parameters you write (:from, :to, :anything) get their own fields automatically."
+whatever you SELECT,whatever you SELECT
+"Stuck? Pick an example above, Run it, then change one line at a time.","Stuck? Pick an example above, Run it, then change one line at a time."
+Sales by day,Sales by day
+One row per day with the number of orders and the revenue. Cancelled and fully refunded orders are left out.,One row per day with the number of orders and the revenue. Cancelled and fully refunded orders are left out.
+"Group by week with YEARWEEK(created_at) or by month with DATE_FORMAT(created_at, '%Y-%m').","Group by week with YEARWEEK(created_at) or by month with DATE_FORMAT(created_at, '%Y-%m')."
+Best sellers,Best sellers
+"The 20 products sold most in the chosen period, with quantity and revenue. ""parent_item_id IS NULL"" stops configurable and bundle products being counted twice.","The 20 products sold most in the chosen period, with quantity and revenue. ""parent_item_id IS NULL"" stops configurable and bundle products being counted twice."
+Sort by revenue instead: ORDER BY revenue DESC. Show more rows: LIMIT 50.,Sort by revenue instead: ORDER BY revenue DESC. Show more rows: LIMIT 50.
+Customers without orders,Customers without orders
+People who opened an account in the period but never placed an order. Good for a welcome or first-order campaign.,People who opened an account in the period but never placed an order. Good for a welcome or first-order campaign.
+"LEFT JOIN + ""IS NULL"" is the pattern for ""has no …"". Use it for products never sold, too.","LEFT JOIN + ""IS NULL"" is the pattern for ""has no …"". Use it for products never sold, too."
+Low stock,Low stock
+"Simple products still in stock but at or below the threshold you enter. Schedule it daily with ""Don't send when there are no rows"".","Simple products still in stock but at or below the threshold you enter. Schedule it daily with ""Don't send when there are no rows""."
+"Stores with several warehouses (MSI) keep stock per source in inventory_source_item (sku, source_code, quantity).","Stores with several warehouses (MSI) keep stock per source in inventory_source_item (sku, source_code, quantity)."
+Abandoned carts,Abandoned carts
+Carts with products and a known e-mail that were not turned into an order and have been idle for over an hour.,Carts with products and a known e-mail that were not turned into an order and have been idle for over an hour.
+Guests appear only if they typed their e-mail at checkout. Change the idle time with INTERVAL 1 DAY.,Guests appear only if they typed their e-mail at checkout. Change the idle time with INTERVAL 1 DAY.
+Coupon usage,Coupon usage
+"How often each coupon code was used, how much discount it gave and how much revenue came with it. Discount is shown as a negative number.","How often each coupon code was used, how much discount it gave and how much revenue came with it. Discount is shown as a negative number."
+"Look at one code only: replace ""IS NOT NULL"" with = :code.","Look at one code only: replace ""IS NOT NULL"" with = :code."
+Decide what one row is,Decide what one row is
+One day? One product? One customer? This decides your GROUP BY.,One day? One product? One customer? This decides your GROUP BY.
+Pick the columns,Pick the columns
+Give each column a clear name with AS — that name becomes the header in Excel and CSV.,Give each column a clear name with AS — that name becomes the header in Excel and CSV.
+Add parameters,Add parameters
+"Write :from, :to, :store or any :name. A field for each one appears under the editor, and the schedule fills dates in for you.","Write :from, :to, :store or any :name. A field for each one appears under the editor, and the schedule fills dates in for you."
+Filter the noise,Filter the noise
+"Leave out cancelled orders, test orders and child items of configurable products.","Leave out cancelled orders, test orders and child items of configurable products."
+Run and check,Run and check
+Run shows the first 100 rows. Compare one number with the Magento admin before you trust it.,Run shows the first 100 rows. Compare one number with the Magento admin before you trust it.
+"Save, then schedule","Save, then schedule"
+Saved reports can be run by hand; the Schedule tab sends them by e-mail.,Saved reports can be run by hand; the Schedule tab sends them by e-mail.
+"Orders: created_at, state, status, base_grand_total, customer_id, customer_email, coupon_code, store_id","Orders: created_at, state, status, base_grand_total, customer_id, customer_email, coupon_code, store_id"
+"Order lines: order_id, sku, name, qty_ordered, base_row_total, parent_item_id","Order lines: order_id, sku, name, qty_ordered, base_row_total, parent_item_id"
+"Customers: entity_id, email, firstname, lastname, created_at, group_id","Customers: entity_id, email, firstname, lastname, created_at, group_id"
+"Products: entity_id, sku, type_id (names and prices live in EAV tables)","Products: entity_id, sku, type_id (names and prices live in EAV tables)"
+"Stock: product_id, qty, is_in_stock","Stock: product_id, qty, is_in_stock"
+"Carts: is_active, items_count, base_grand_total, customer_email, updated_at","Carts: is_active, items_count, base_grand_total, customer_email, updated_at"
+"Refunds: order_id, base_grand_total, created_at","Refunds: order_id, base_grand_total, created_at"
+"Dates are stored in UTC. A ""day"" can shift by your time zone offset — the parameters handle this for you.","Dates are stored in UTC. A ""day"" can shift by your time zone offset — the parameters handle this for you."
+Use base_ columns (base_grand_total) when you sell in more than one currency.,Use base_ columns (base_grand_total) when you sell in more than one currency.
+"Without parent_item_id IS NULL, configurable products are counted twice.","Without parent_item_id IS NULL, configurable products are counted twice."
+"Only SELECT works. UPDATE, DELETE or INSERT are refused by the read-only user.","Only SELECT works. UPDATE, DELETE or INSERT are refused by the read-only user."
+This file format is not available on this store.,This file format is not available on this store.
+MageBooster Reporter Lite needs a licence. Enter your serial number in ,MageBooster Reporter Lite needs a licence. Enter your serial number in 
+The store has no sender e-mail address.,The store has no sender e-mail address.
+E-mail is switched off in the store settings (Stores > Configuration > Advanced > System).,E-mail is switched off in the store settings (Stores > Configuration > Advanced > System).
+Pick a store view for :%1.,Pick a store view for :%1.
+The value for :%1 is too long.,The value for :%1 is too long.
+Enter a date (YYYY-MM-DD) for :%1.,Enter a date (YYYY-MM-DD) for :%1.
+only if rows,only if rows
+Run by hand,Run by hand
+This report no longer exists.,This report no longer exists.
+Pick a file format and a delivery.,Pick a file format and a delivery.
+"Enter the time as HH:MM, for example 08:00.","Enter the time as HH:MM, for example 08:00."
+Daily %1,Daily %1
+Mondays,Mondays
+Tuesdays,Tuesdays
+Wednesdays,Wednesdays
+Thursdays,Thursdays
+Fridays,Fridays
+Saturdays,Saturdays
+Sundays,Sundays
+%1 %2,%1 %2
+Day %1 of the month · %2,Day %1 of the month · %2
+Cron %1,Cron %1
+"A cron expression has five fields: minute hour day-of-month month weekday, e.g. ""0 8 * * 1"".","A cron expression has five fields: minute hour day-of-month month weekday, e.g. ""0 8 * * 1""."
+"""%1"" is not a valid cron field.","""%1"" is not a valid cron field."
+Reporter Lite is not set up yet: add the read-only database user to app/etc/env.php ,Reporter Lite is not set up yet: add the read-only database user to app/etc/env.php 
+The report user is the same as the Magento database user. Create a separate read-only user.,The report user is the same as the Magento database user. Create a separate read-only user.
+Could not connect as the read-only report user.,Could not connect as the read-only report user.
+The database does not support a statement time limit.,The database does not support a statement time limit.
+Fill in a value for :%1.,Fill in a value for :%1.
+The query failed: %1,The query failed: %1
+it took too long and was stopped.,it took too long and was stopped.
+the report user may not read this table or column.,the report user may not read this table or column.
+only reading is allowed.,only reading is allowed.
+Write a SELECT query first.,Write a SELECT query first.
+The query is too long.,The query is too long.
+Version comments (/*! ... */) are not allowed.,Version comments (/*! ... */) are not allowed.
+Only one statement can run at a time.,Only one statement can run at a time.
+Only SELECT queries can run here.,Only SELECT queries can run here.
+Variables (@...) are not allowed.,Variables (@...) are not allowed.
+"Use named parameters like :from instead of ""?"".","Use named parameters like :from instead of ""?""."
+"""%1"" is not allowed in a report query.","""%1"" is not allowed in a report query."
+Locking reads are not allowed.,Locking reads are not allowed.
+A comment is not closed.,A comment is not closed.
+A quote is not closed.,A quote is not closed.
+Reporter,Reporter
+This page needs JavaScript.,This page needs JavaScript.
+Today,Today
+Yesterday,Yesterday
+7 days ago,7 days ago
+30 days ago,30 days ago
+90 days ago,90 days ago
+Start of this week,Start of this week
+Start of previous week,Start of previous week
+End of previous week,End of previous week
+Start of this month,Start of this month
+Start of previous month,Start of previous month
+End of previous month,End of previous month
+Start of this year,Start of this year
+The dates in the parameters,The dates in the parameters
+Previous day,Previous day
+Previous week (Mon–Sun),Previous week (Mon–Sun)
+Previous month,Previous month
+Last 7 days,Last 7 days
+Last 30 days,Last 30 days
+This week so far,This week so far
+This month so far,This month so far
+"day, orders, revenue","day, orders, revenue"
+"sku, name, qty, revenue","sku, name, qty, revenue"
+"email, firstname, lastname, registered","email, firstname, lastname, registered"
+"sku, qty","sku, qty"
+"customer_email, items_count, cart_value, last_activity","customer_email, items_count, cart_value, last_activity"
+"coupon_code, orders, discount, revenue","coupon_code, orders, discount, revenue"
+MageBooster,MageBooster
+Reporter Lite,Reporter Lite
+"Open and run saved reports, download results","Open and run saved reports, download results"
+"Write, save and delete report queries","Write, save and delete report queries"
+Schedule reports and send them by e-mail,Schedule reports and send them by e-mail
+MageBooster Reporter Lite,MageBooster Reporter Lite
+"Serial number, starts with MB1.","Serial number, starts with MB1."
+E-mail,E-mail
+Send from,Send from
+"Reports go out through the store e-mail settings (Stores, Configuration, Advanced, System, Mail sending settings).","Reports go out through the store e-mail settings (Stores, Configuration, Advanced, System, Mail sending settings)."
+Largest attachment (MB),Largest attachment (MB)
+A bigger file is sent as a download link instead.,A bigger file is sent as a download link instead.
+Queries,Queries
+"Queries run on a read-only database user. The user and its password live in app/etc/env.php (mbreporterlite/sql, or mbreports/sql of MageBooster Reports), never here. See the guide for the setup.","Queries run on a read-only database user. The user and its password live in app/etc/env.php (mbreporterlite/sql, or mbreports/sql of MageBooster Reports), never here. See the guide for the setup."
+Most rows per run,Most rows per run
+Longest run (seconds),Longest run (seconds)
+Files and history,Files and history
+Download links work for (days),Download links work for (days)
+"Report files are kept in var/mbreporterlite for this long, then removed.","Report files are kept in var/mbreporterlite for this long, then removed."
+Keep run history for (days),Keep run history for (days)
+Settings,Settings

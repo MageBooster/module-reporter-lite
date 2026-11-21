@@ -1,0 +1,41 @@
+<?php
+/*
+ * Copyright (c) 2026 WebWorks 101 OÜ (MageBooster). All rights reserved.
+ * Commercial licence, see LICENSE.txt. https://magebooster.com
+ * Licensed per serial number for one production installation (one store domain); staging and
+ * development copies of that store are allowed. Serial numbers and downloads are tied to the customer.
+ * You may modify this code for your own licensed store; keep this notice.
+ * Not allowed: copying to other stores, redistributing, reselling, sublicensing, publishing it publicly,
+ * removing licence checks or notices, sharing serial numbers. Unauthorised use: the serial number is
+ * revoked without refund, updates and support stop, damages and legal action may follow.
+ * Estonian law applies; court: Harju County Court (Harju Maakohus).
+ */
+/** @var \MageBooster\ReporterLite\Block\Adminhtml\App $block */
+/** @var \Magento\Framework\Escaper $escaper */
+$conn = $block->connectionState();
+?>
+<div class="mbrl" id="mbrl-app">
+    <header class="mbrl-top">
+        <span class="mbrl-brand">
+            <span class="mbrl-logo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg>
+            </span>
+            <span class="mbrl-brand-name"><?= $escaper->escapeHtml(__('Reporter')) ?> <span>Lite</span></span>
+        </span>
+        <span class="mbrl-top-sub" data-role="top-sub">MageBooster</span>
+        <span class="mbrl-grow"></span>
+        <a class="mbrl-conn mbrl-conn-<?= $escaper->escapeHtmlAttr($conn['state']) ?>" href="<?= $escaper->escapeUrl($block->getUrl('adminhtml/system_config/edit', ['section' => 'magebooster_reporterlite'])) ?>">
+            <span><?= $escaper->escapeHtml($conn['text']) ?></span>
+            <span class="mbrl-conn-dot" aria-hidden="true"></span>
+        </a>
+    </header>
+    <div class="mbrl-body" data-role="body">
+        <noscript><?= $escaper->escapeHtml(__('This page needs JavaScript.')) ?></noscript>
+    </div>
+</div>
+<script type="text/x-magento-init">
+<?= /* @noEscape */ json_encode(
+    ['#mbrl-app' => ['MageBooster_ReporterLite/js/app' => ['config' => $block->getConfigJson()]]],
+    JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+) ?>
+</script>

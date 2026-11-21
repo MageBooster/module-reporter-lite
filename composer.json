@@ -1,0 +1,50 @@
+{
+    "name": "magebooster/module-reporter-lite",
+    "description": "MageBooster Reporter Lite: write read-only SQL reports in the Magento admin, run them, download CSV/Excel/JSON/HTML/PDF and send them by e-mail on a schedule.",
+    "type": "magento2-module",
+    "keywords": [
+        "magento2",
+        "magento-2-module",
+        "reports",
+        "sql-reports",
+        "report-builder",
+        "scheduled-reports",
+        "export"
+    ],
+    "homepage": "https://magebooster.com",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "WebWorks 101 OÜ",
+            "homepage": "https://magebooster.com"
+        }
+    ],
+    "support": {
+        "email": "info@magebooster.com",
+        "docs": "https://github.com/MageBooster/module-reporter-lite/blob/main/docs/HOWTO.en.md"
+    },
+    "require": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-pdo_mysql": "*",
+        "magento/framework": "^103.0",
+        "magento/module-backend": "^102.0",
+        "magento/module-config": "^101.2",
+        "magento/module-cron": "^100.4",
+        "magento/module-store": "^101.1",
+        "magebooster/module-license": "^1.1"
+    },
+    "suggest": {
+        "phpoffice/phpspreadsheet": "Excel (.xlsx) export",
+        "dompdf/dompdf": "PDF export"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageBooster\\ReporterLite\\": ""
+        }
+    }
+}

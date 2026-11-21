@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!--
+  Copyright (c) 2026 WebWorks 101 OÜ (MageBooster). All rights reserved.
+  Commercial licence, see LICENSE.txt. https://magebooster.com
+  Licensed per serial number for one production installation (one store domain); staging and
+  development copies of that store are allowed. Serial numbers and downloads are tied to the customer.
+  You may modify this code for your own licensed store; keep this notice.
+  Not allowed: copying to other stores, redistributing, reselling, sublicensing, publishing it publicly,
+  removing licence checks or notices, sharing serial numbers. Unauthorised use: the serial number is
+  revoked without refund, updates and support stop, damages and legal action may follow.
+  Estonian law applies; court: Harju County Court (Harju Maakohus).
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mbreporterlite_report" resource="default" engine="innodb" comment="MageBooster Reporter Lite reports">
+        <column xsi:type="int" name="report_id" unsigned="true" nullable="false" identity="true" comment="Report ID"/>
+        <column xsi:type="varchar" name="name" length="255" nullable="false" comment="Name"/>
+        <column xsi:type="text" name="description" nullable="true" comment="Description"/>
+        <column xsi:type="smallint" name="is_active" unsigned="true" nullable="false" default="1" comment="Active"/>
+        <column xsi:type="mediumtext" name="query" nullable="false" comment="SELECT query"/>
+        <column xsi:type="text" name="query_parameters" nullable="true" comment="Parameter values (JSON)"/>
+        <column xsi:type="smallint" name="cron_status" unsigned="true" nullable="false" default="0" comment="Send automatically"/>
+        <column xsi:type="text" name="schedule" nullable="true" comment="Schedule (JSON: frequency, day, time, range)"/>
+        <column xsi:type="varchar" name="cron_expression" length="100" nullable="true" comment="Cron expression (store time)"/>
+        <column xsi:type="text" name="recipients" nullable="true" comment="Recipients, comma separated"/>
+        <column xsi:type="varchar" name="export_type" length="10" nullable="false" default="xlsx" comment="File format"/>
+        <column xsi:type="varchar" name="delivery" length="10" nullable="false" default="attach" comment="attach or link"/>
+        <column xsi:type="smallint" name="skip_if_empty" unsigned="true" nullable="false" default="0" comment="Do not send without rows"/>
+        <column xsi:type="datetime" name="next_run_at" nullable="true" comment="Next send (UTC)"/>
+        <column xsi:type="datetime" name="last_run_at" nullable="true" comment="Last run (UTC)"/>
+        <column xsi:type="varchar" name="last_result" length="255" nullable="true" comment="Last result"/>
+        <column xsi:type="int" name="last_rows" unsigned="true" nullable="true" comment="Rows in the last run"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Created"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="report_id"/>
+        </constraint>
+        <index referenceId="MBREPORTERLITE_REPORT_DUE" indexType="btree">
+            <column name="cron_status"/>
+            <column name="next_run_at"/>
+        </index>
+    </table>
+    <table name="mbreporterlite_run" resource="default" engine="innodb" comment="MageBooster Reporter Lite run history">
+        <column xsi:type="int" name="run_id" unsigned="true" nullable="false" identity="true" comment="Run ID"/>
+        <column xsi:type="int" name="report_id" unsigned="true" nullable="false" comment="Report ID"/>
+        <column xsi:type="datetime" name="run_at" nullable="false" comment="Run at (UTC)"/>
+        <column xsi:type="varchar" name="run_trigger" length="10" nullable="false" default="manual" comment="schedule, manual or test"/>
+        <column xsi:type="int" name="row_count" unsigned="true" nullable="false" default="0" comment="Rows"/>
+        <column xsi:type="varchar" name="result" length="10" nullable="false" default="ok" comment="sent, skipped, failed, ok"/>
+        <column xsi:type="varchar" name="message" length="500" nullable="true" comment="Result text"/>
+        <column xsi:type="varchar" name="file" length="255" nullable="true" comment="File name under var/mbreporterlite"/>
+        <column xsi:type="varchar" name="token_hash" length="64" nullable="true" comment="SHA-256 of the download token"/>
+        <column xsi:type="datetime" name="expires_at" nullable="true" comment="Link and file expiry (UTC)"/>
+        <column xsi:type="varchar" name="admin_user" length="100" nullable="true" comment="Admin who ran it"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="run_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="MBREPORTERLITE_RUN_REPORT_ID_MBREPORTERLITE_REPORT_REPORT_ID" table="mbreporterlite_run" column="report_id" referenceTable="mbreporterlite_report" referenceColumn="report_id" onDelete="CASCADE"/>
+        <constraint xsi:type="unique" referenceId="MBREPORTERLITE_RUN_TOKEN_HASH">
+            <column name="token_hash"/>
+        </constraint>
+        <index referenceId="MBREPORTERLITE_RUN_REPORT_RUN_AT" indexType="btree">
+            <column name="report_id"/>
+            <column name="run_at"/>
+        </index>
+    </table>
+</schema>

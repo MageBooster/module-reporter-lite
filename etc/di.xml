@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+  Copyright (c) 2026 WebWorks 101 OÜ (MageBooster). All rights reserved.
+  Commercial licence, see LICENSE.txt. https://magebooster.com
+  Licensed per serial number for one production installation (one store domain); staging and
+  development copies of that store are allowed. Serial numbers and downloads are tied to the customer.
+  You may modify this code for your own licensed store; keep this notice.
+  Not allowed: copying to other stores, redistributing, reselling, sublicensing, publishing it publicly,
+  removing licence checks or notices, sharing serial numbers. Unauthorised use: the serial number is
+  revoked without refund, updates and support stop, damages and legal action may follow.
+  Estonian law applies; court: Harju County Court (Harju Maakohus).
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Licence: registers the product with MageBooster License (status table, admin notice, grace period) -->
+    <type name="MageBooster\License\Model\Products">
+        <arguments>
+            <argument name="products" xsi:type="array">
+                <item name="reporter-lite" xsi:type="array">
+                    <item name="label" xsi:type="string">MageBooster Reporter Lite</item>
+                    <item name="codes" xsi:type="array">
+                        <item name="reporter-lite" xsi:type="string">reporter-lite</item>
+                    </item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- CLI -->
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="mbreporterlite_run" xsi:type="object">MageBooster\ReporterLite\Console\Command\RunCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Proxy: the command is built on every bin/magento run, its services only when it runs -->
+    <type name="MageBooster\ReporterLite\Console\Command\RunCommand">
+        <arguments>
+            <argument name="delivery" xsi:type="object">MageBooster\ReporterLite\Model\Delivery\Proxy</argument>
+            <argument name="repository" xsi:type="object">MageBooster\ReporterLite\Model\Repository\Proxy</argument>
+            <argument name="licence" xsi:type="object">MageBooster\ReporterLite\Model\Licence\Proxy</argument>
+            <argument name="cleanup" xsi:type="object">MageBooster\ReporterLite\Cron\Cleanup\Proxy</argument>
+            <argument name="state" xsi:type="object">Magento\Framework\App\State\Proxy</argument>
+        </arguments>
+    </type>
+</config>
