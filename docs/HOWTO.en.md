@@ -156,7 +156,7 @@ bin/magento mbreporterlite:run --cleanup            # delete expired files and o
 - `mbreporterlite_report`: reports, parameters and schedules
 - `mbreporterlite_run`: run history, file names, hashed download tokens and expiry dates
 
-Files are kept in `var/mbreporterlite`. The public download address is `https://<store>/mbreporterlite/file/get?t=<token>`; it is not indexed and stops working when the link expires or the file is cleaned up.
+Files are kept in `var/mbreporterlite`. The public download address is `https://<store>/mbreporterlite/file/get/t/<token>/`; it is not indexed and stops working when the link expires or the file is cleaned up.
 
 ## Troubleshooting
 

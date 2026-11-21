@@ -74,6 +74,10 @@ class Repository
         $db = $this->resource->getConnection();
         $row = [];
         foreach ($data as $k => $v) {
+            if ($k === 'recipients' && is_array($v)) {
+                $row[$k] = implode(',', $v);
+                continue;
+            }
             $row[$k] = is_array($v) ? json_encode($v, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : $v;
         }
         if ($id) {

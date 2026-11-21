@@ -112,7 +112,7 @@ class Delivery
                 $subject = ($trigger === 'test' ? '[' . __('Test') . '] ' : '') . $report['name']
                     . ($period ? ' · ' . $period : '');
                 $eml = $emlDir !== null
-                    ? rtrim($emlDir, '/') . '/report-' . $reportId . '-' . $now->format('Ymd-His') . '-' . $trigger . '.eml'
+                    ? rtrim($emlDir, '/') . '/report-' . $reportId . '-' . $now->format('Ymd-His') . '-' . $trigger . '-' . bin2hex(random_bytes(3)) . '.eml'
                     : null;
                 $this->mailer->send($to, $subject, $html, $text, $asLink ? null : $doc, $eml);
                 $out = $trigger === 'test'

@@ -156,7 +156,7 @@ bin/magento mbreporterlite:run --cleanup            # süresi dolan dosyaları v
 - `mbreporterlite_report`: raporlar, parametreler ve zamanlamalar
 - `mbreporterlite_run`: çalışma geçmişi, dosya adları, özetlenmiş indirme anahtarları ve son geçerlilik tarihleri
 
-Dosyalar `var/mbreporterlite` klasöründe tutulur. Herkese açık indirme adresi `https://<mağaza>/mbreporterlite/file/get?t=<anahtar>` biçimindedir; arama motorlarında dizine eklenmez, bağlantının süresi dolunca ya da dosya temizlenince çalışmaz.
+Dosyalar `var/mbreporterlite` klasöründe tutulur. Herkese açık indirme adresi `https://<mağaza>/mbreporterlite/file/get/t/<anahtar>/` biçimindedir; arama motorlarında dizine eklenmez, bağlantının süresi dolunca ya da dosya temizlenince çalışmaz.
 
 ## Sorun giderme
 

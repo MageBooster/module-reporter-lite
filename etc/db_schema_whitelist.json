@@ -1,0 +1,54 @@
+{
+    "mbreporterlite_report": {
+        "column": {
+            "report_id": true,
+            "name": true,
+            "description": true,
+            "is_active": true,
+            "query": true,
+            "query_parameters": true,
+            "cron_status": true,
+            "schedule": true,
+            "cron_expression": true,
+            "recipients": true,
+            "export_type": true,
+            "delivery": true,
+            "skip_if_empty": true,
+            "next_run_at": true,
+            "last_run_at": true,
+            "last_result": true,
+            "last_rows": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "MBREPORTERLITE_REPORT_CRON_STATUS_NEXT_RUN_AT": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "mbreporterlite_run": {
+        "column": {
+            "run_id": true,
+            "report_id": true,
+            "run_at": true,
+            "run_trigger": true,
+            "row_count": true,
+            "result": true,
+            "message": true,
+            "file": true,
+            "token_hash": true,
+            "expires_at": true,
+            "admin_user": true
+        },
+        "index": {
+            "MBREPORTERLITE_RUN_REPORT_ID_RUN_AT": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "MBREPORTERLITE_RUN_REPORT_ID_MBREPORTERLITE_REPORT_REPORT_ID": true,
+            "MBREPORTERLITE_RUN_TOKEN_HASH": true
+        }
+    }
+}

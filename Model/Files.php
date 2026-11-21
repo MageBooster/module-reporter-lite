@@ -44,7 +44,6 @@ class Files
     {
         $dir = $this->dir();
         $dir->create(self::DIR);
-        $dir->writeFile(self::DIR . '/.htaccess', "Require all denied\nDeny from all\n");
         $name = bin2hex(random_bytes(16)) . '.' . preg_replace('/[^a-z0-9]/', '', strtolower($extension));
         $dir->writeFile(self::DIR . '/' . $name, $body);
         return $name;

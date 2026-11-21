@@ -52,7 +52,7 @@ class RunCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('mbreporterlite:run')
             ->setDescription('Send a Reporter Lite report now, or a test to one address')
@@ -66,7 +66,7 @@ class RunCommand extends Command
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
             $this->state->setAreaCode(Area::AREA_CRONTAB);
