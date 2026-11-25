@@ -14,7 +14,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="MageBooster_Reports::magebooster" title="MageBooster" translate="title" sortOrder="75">
+                <resource id="MageBooster_License::magebooster" title="MageBooster" translate="title" sortOrder="75">
                     <resource id="MageBooster_ReporterLite::reporter" title="Reporter Lite" translate="title" sortOrder="40">
                         <resource id="MageBooster_ReporterLite::view" title="Open and run saved reports, download results" translate="title" sortOrder="10"/>
                         <resource id="MageBooster_ReporterLite::edit" title="Write, save and delete report queries" translate="title" sortOrder="20"/>

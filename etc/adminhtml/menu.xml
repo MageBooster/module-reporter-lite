@@ -12,9 +12,7 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <!-- Same top item id as the other MageBooster modules: the menus merge into one "MageBooster" entry -->
-        <add id="MageBooster_Reports::magebooster" title="MageBooster" translate="title" module="MageBooster_ReporterLite" sortOrder="72" resource="MageBooster_Reports::magebooster"/>
-        <add id="MageBooster_ReporterLite::group" title="Reporter Lite" translate="title" module="MageBooster_ReporterLite" sortOrder="40" parent="MageBooster_Reports::magebooster" resource="MageBooster_ReporterLite::reporter"/>
+        <add id="MageBooster_ReporterLite::group" title="Reporter Lite" translate="title" module="MageBooster_ReporterLite" sortOrder="40" parent="MageBooster_License::magebooster" resource="MageBooster_ReporterLite::reporter"/>
         <add id="MageBooster_ReporterLite::reports" title="SQL reports" translate="title" module="MageBooster_ReporterLite" sortOrder="10" parent="MageBooster_ReporterLite::group" action="mbreporterlite/report/index" resource="MageBooster_ReporterLite::view"/>
         <add id="MageBooster_ReporterLite::settings" title="Settings" translate="title" module="MageBooster_ReporterLite" sortOrder="20" parent="MageBooster_ReporterLite::group" action="adminhtml/system_config/edit/section/magebooster_reporterlite" resource="MageBooster_ReporterLite::config"/>
     </menu>
